@@ -7,9 +7,14 @@
     "build": "vue-cli-service build"
   },
   "dependencies": {
+    "axios": "^0.21.1",
+    "moment": "^2.29.1",
     "register-service-worker": "^1.7.1",
+    "vb4-table": "^1.0.1",
     "vue": "^2.6.11",
+    "vue-multiselect": "^2.1.6",
     "vue-router": "^3.2.0",
+    "vue-search-select": "^2.9.3",
     "vuex": "^3.4.0"
   },
   "devDependencies": {

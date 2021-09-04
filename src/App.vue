@@ -1,32 +1,45 @@
 <template>
-  <div id="app">
-    <div id="nav">
-      <router-link to="/">Home</router-link> |
-      <router-link to="/about">About</router-link>
+  <div>
+    <div v-if="currentRouteName == 'Login'" class="horizontal-layout horizontal-menu navbar-static 1-column footer-static bg-full-screen-image  blank-page" data-open="hover" data-menu="horizontal-menu" data-col="1-column">
+        <router-view/>
     </div>
-    <router-view/>
+    <div v-else class="horizontal-layout horizontal-menu navbar-static 2-columns footer-static" data-open="hover" data-menu="horizontal-menu" data-col="2-columns">
+      <navbar :url="currentRouteName"/>
+      <!-- <router-link to="/">Home</router-link> |
+      <router-link to="/about">About</router-link> -->
+      <!-- BEGIN: Content-->
+      <div class="app-content content">
+        <div class="content-overlay"></div>
+          <router-view/>
+      </div>
+
+      <footer/>
+    </div>
   </div>
+  
 </template>
 
-<style>
-#app {
-  font-family: Avenir, Helvetica, Arial, sans-serif;
-  -webkit-font-smoothing: antialiased;
-  -moz-osx-font-smoothing: grayscale;
-  text-align: center;
-  color: #2c3e50;
-}
+<script>
+// import * from "./public/app-assets/vendors/js/";
+import Navbar from '@/components/Navbar.vue'
+import Footer from '@/components/Footer.vue'
+export default {
+    components: {
+    // Header,
+    Navbar,
+    Footer,
+  },
 
-#nav {
-  padding: 30px;
+  computed: {
+    currentRouteName() {
+          return this.$route.name;
+      }
+  }
 }
+</script>
 
-#nav a {
-  font-weight: bold;
-  color: #2c3e50;
-}
 
-#nav a.router-link-exact-active {
-  color: #42b983;
-}
+
+<style scoped>
+
 </style>

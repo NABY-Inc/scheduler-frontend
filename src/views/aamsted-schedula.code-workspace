@@ -1,0 +1,13 @@
+{
+	"folders": [
+		{
+			"name": "schedular",
+			"path": "../../../../../../../Applications/XAMPP/xamppfiles/htdocs/schedular"
+		},
+		{
+			"name": "aamusted-schedular",
+			"path": "../.."
+		}
+	],
+	"settings": {}
+}
